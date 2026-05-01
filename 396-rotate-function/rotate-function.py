@@ -2,7 +2,9 @@ class Solution(object):
     def maxRotateFunction(self, nums):
         n = len(nums)
         total_sum = sum(nums)
-        f = sum(i * nums[i] for i in range(n))
+        f = 0
+        for i in range(n):
+            f += i * nums[i]
         max_val = f
         for k in range(1, n):
             f = f + total_sum - n * nums[-k]
